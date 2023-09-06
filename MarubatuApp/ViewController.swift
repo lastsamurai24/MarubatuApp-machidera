@@ -11,30 +11,29 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     var currentQuestionNum = 0
-    
-    let questions: [[String: Any]] = [
-        [
-            "question": "iphoneアプリを開発する統合環境はZcode",
-            "answer": false
-        ],
-        ["question":"Xcode画面の右側にはユーティリティーズがある",
-         "answer":true
-        ],
-        [
-            "question":"UILabelは文字列を表示する際にる利用する",
-            "answer":true
-        ]
-    ]
-    
-    
-    
+    var questions: [[String:Any]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         showQuestion()
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        questions = []
+        let userDefaults = UserDefaults.standard
+        if userDefaults.object(forKey: "questions") != nil {
+            questions = userDefaults.object(forKey: "questions") as! [[String: Any]]
+        }
+        showQuestion()
+    }
+    
     // Do any additional setup after loading the view.
     
     func showQuestion() {
+        if currentQuestionNum >= questions.count {
+            questionLabel.text = "問題がありません"
+            return
+        }
         let question = questions[currentQuestionNum]
         
         if let que = question["question"] as? String {
@@ -43,14 +42,15 @@ class ViewController: UIViewController {
     }
     
     func checkAnswer(yourAnswer: Bool){
+        if questions.isEmpty { return }
         let question = questions[currentQuestionNum]
         
         if let  ans = question["answer"]as? Bool {
             if yourAnswer == ans{
                 currentQuestionNum += 1
-                shoeAlert(messege: "正解！!")
+                showAlert(messege: "正解！!")
             }else{
-                shoeAlert(messege: "不正解")
+                showAlert(messege: "不正解")
             }
         }
         if currentQuestionNum >= questions.count {
@@ -58,23 +58,23 @@ class ViewController: UIViewController {
         }
         showQuestion()
     }
-    func shoeAlert(messege: String){
+    func showAlert(messege: String){
         let alert = UIAlertController(title: "解答", message: messege, preferredStyle: .alert)
         let close = UIAlertAction(title: "閉じる", style: .cancel)
         alert.addAction(close)
         present(alert,animated:true, completion:nil)
         
     }
-        
-        
-        @IBAction func tappedNoButton(_ sender: UIButton) {
-            checkAnswer(yourAnswer: false)
-        }
-        
-        @IBAction func tappedYesButton(_ sender: UIButton) {
-            checkAnswer(yourAnswer: true)
-        }
+    
+    
+    @IBAction func tappedNoButton(_ sender: UIButton) {
+        checkAnswer(yourAnswer: false)
     }
     
-    
+    @IBAction func tappedYesButton(_ sender: UIButton) {
+        checkAnswer(yourAnswer: true)
+    }
+}
+
+
 

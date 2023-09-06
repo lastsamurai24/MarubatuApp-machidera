@@ -13,6 +13,7 @@
 		3C2FAEEE2AA2AE870097757A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2FAEEC2AA2AE870097757A /* Main.storyboard */; };
 		3C2FAEF02AA2AE880097757A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C2FAEEF2AA2AE880097757A /* Assets.xcassets */; };
 		3C2FAEF32AA2AE880097757A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C2FAEF12AA2AE880097757A /* LaunchScreen.storyboard */; };
+		3C2FAF7B2AA5979B0097757A /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2FAF7A2AA5979B0097757A /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3C2FAEEF2AA2AE880097757A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C2FAEF22AA2AE880097757A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C2FAEF42AA2AE880097757A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C2FAF7A2AA5979B0097757A /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = ../QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				3C2FAEE62AA2AE870097757A /* AppDelegate.swift */,
 				3C2FAEE82AA2AE870097757A /* SceneDelegate.swift */,
 				3C2FAEEA2AA2AE870097757A /* ViewController.swift */,
+				3C2FAF7A2AA5979B0097757A /* QuestionViewController.swift */,
 				3C2FAEEC2AA2AE870097757A /* Main.storyboard */,
 				3C2FAEEF2AA2AE880097757A /* Assets.xcassets */,
 				3C2FAEF12AA2AE880097757A /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				3C2FAEEB2AA2AE870097757A /* ViewController.swift in Sources */,
 				3C2FAEE72AA2AE870097757A /* AppDelegate.swift in Sources */,
+				3C2FAF7B2AA5979B0097757A /* QuestionViewController.swift in Sources */,
 				3C2FAEE92AA2AE870097757A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
